@@ -26,5 +26,15 @@ namespace Repaso
         abstract public double Peso();
         abstract public double Precio();
 
+        public override string ToString() {return codigo.ToString();}
+
+        public int CompareTo(object obj)
+        {
+            Producto otro = obj as Producto;
+            if (otro != null)
+                return codigo.CompareTo(otro.codigo);
+            return 1;
+        }
+
     }
 }
